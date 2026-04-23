@@ -8,7 +8,7 @@ export default function App() {
         <Card.Body>
           <Card.Title>Electron + React + Bootstrap</Card.Title>
           <Card.Text>
-            Wenn du das siehst, läuft alles!!
+            Wenn du das siehst, läuft alles
           </Card.Text>
           <Button variant="primary">Knopf lebt</Button>
         </Card.Body>

@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
+const isDev = !app.isPackaged;
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -14,6 +15,13 @@ function createWindow() {
 
   win.loadFile(path.join(__dirname, "../index.html"));
   win.webContents.openDevTools();
+}
+
+if(isDev) {
+require("electron-reload")(path.join(__dirname, ".."), {
+  electron: path.join(__dirname, "..", "node_modules", ".bin", "electron"),
+  hardResetMethod: "exit"
+});
 }
 
 app.whenReady().then(() => {
